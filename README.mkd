@@ -1,3 +1,6 @@
+Introduction
+========
+
 This is a basic sample that shows how to create a queue for processing events to MixPanel.
 
 We build the event and push it to a REDIS queue, then consume the task through a gevent based worker which will run "forever" popping tasks off the REDIS queue and submitting them to MixPanel - this way you can have a very high performing queue that's asynchronous and won't slow down your main code waiting for MixPanel to respond.

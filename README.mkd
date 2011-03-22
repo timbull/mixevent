@@ -18,7 +18,8 @@ Requirements
 
 To run this successfully, you'll need:
 
-# Redis [http://redis.io]
-# gevent [http://www.gevent.org/]
+* Redis [http://redis.io]
+* gevent [http://www.gevent.org/]
+* Python redis driver
 
 

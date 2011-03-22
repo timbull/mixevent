@@ -1,0 +1,12 @@
+This is a basic sample that shows how to create a queue for processing events to MixPanel.
+
+We build the event and push it to a REDIS queue, then consume the task through a gevent based worker which will run "forever" popping tasks off the REDIS queue and submitting them to MixPanel - this way you can have a very high performing queue that's asynchronous and won't slow down your main code waiting for MixPanel to respond.
+
+There are two files:
+
+* mixpanel.py - Contains two main functions, build_event which builds a dictionary containing the event and properties you want to pass to MixPanel and track which logs the event after it is popped off the REDIS queue to mixpanel.
+
+I was going to combine the REDIS logic into the build_event, but left this out (although I've included a sample) because you might want to use mixevent.py with your own queuing system (Celery for example).
+
+* mixevent.py - A gevent based worker that will run indefinitely, popping MixPanel events off a REDIS queue and submitting them to MixPanel.
+

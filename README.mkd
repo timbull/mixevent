@@ -22,4 +22,13 @@ To run this successfully, you'll need:
 * gevent [http://www.gevent.org/]
 * Python redis driver
 
+Running the mixevent.py worker
+========
+There is a start.sh script included, if you start the worker like this:
+
+$ start.sh mixevent.py &
+
+It will happily run in the background, shutting itself down every 1000 events and restarting without dropping a beat.  We run them like this in production - they are very long running processes and will keep happily chugging away without a hiccup.
+
+
 

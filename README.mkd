@@ -13,3 +13,12 @@ I was going to combine the REDIS logic into the build_event, but left this out (
 
 * mixevent.py - A gevent based worker that will run indefinitely, popping MixPanel events off a REDIS queue and submitting them to MixPanel.
 
+Requirements
+========
+
+To run this successfully, you'll need:
+
+# Redis [http://redis.io]
+# gevent [http://www.gevent.org/]
+
+
